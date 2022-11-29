@@ -13,7 +13,7 @@ public class TournamentConfig {
     @Bean
     CommandLineRunner commandLineRunner(TournamentRepository tournamentRepository){
         return args ->{
-
+//
          Tournament t1 =   new Tournament(
                     "Mike's Open",
                     LocalDate.of(2022, Month.JULY, 23),
@@ -40,7 +40,7 @@ public class TournamentConfig {
 //                    10_000.00
 //            );
 
-            tournamentRepository.saveAll(List.of(t1,t2));
+//            tournamentRepository.saveAll(List.of(t1,t2));
         };
     }
 }

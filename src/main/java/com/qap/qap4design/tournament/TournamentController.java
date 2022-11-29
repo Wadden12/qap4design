@@ -1,9 +1,7 @@
 package com.qap.qap4design.tournament;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -22,6 +20,11 @@ public class TournamentController {
     @GetMapping()
     public List<Tournament> getTournaments(){
     return tournamentService.getTournaments();
+    }
+
+    @PostMapping()
+    public void registerNewTournament(@RequestBody Tournament tournament){
+        tournamentService.addNewTournament(tournament);
     }
 
 

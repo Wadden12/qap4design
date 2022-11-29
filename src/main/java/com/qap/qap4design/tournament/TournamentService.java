@@ -22,4 +22,12 @@ public class TournamentService {
         return tournamentRepository.findAll();
     }
 
+    public void addNewTournament(Tournament tournament) {
+       Optional<Tournament> tournamentByName =  tournamentRepository
+               .findTournamentByName(tournament.getName());
+        if(tournamentByName.isPresent()){
+            throw new IllegalArgumentException("Tournament Name already exists");
+        }
+        tournamentRepository.save(tournament);
+    }
 }
