@@ -30,4 +30,13 @@ public class TournamentService {
         }
         tournamentRepository.save(tournament);
     }
+
+
+    public void deleteStudent(Long tournamentId) {
+        boolean exist = tournamentRepository.existsById(tournamentId);
+        if(!exist){
+            throw new IllegalArgumentException("Tournament with id " + tournamentId + "does not exist");
+        }
+        tournamentRepository.deleteById(tournamentId);
+    }
 }

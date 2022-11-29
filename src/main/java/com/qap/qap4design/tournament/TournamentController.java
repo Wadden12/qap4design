@@ -27,6 +27,11 @@ public class TournamentController {
         tournamentService.addNewTournament(tournament);
     }
 
+    @DeleteMapping(path ="{tournamentId}")
+    public void deleteTournament(@PathVariable("tournamentId") Long tournamentId){
+        tournamentService.deleteStudent(tournamentId);
+    }
+
 
 
 }
