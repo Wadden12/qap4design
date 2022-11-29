@@ -1,5 +1,6 @@
 package com.qap.qap4design.tournament;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,16 +13,15 @@ import java.util.List;
 @RequestMapping(path = "api/tournament")
 public class TournamentController {
 
+    private final TournamentService tournamentService;
+    @Autowired
+    public TournamentController(TournamentService tournamentService) {
+        this.tournamentService = tournamentService;
+    }
+
     @GetMapping()
     public List<Tournament> getTournaments(){
-        return List.of(
-                new Tournament(1L,
-                        LocalDate.of(2022, Month.JULY,23),
-                        LocalDate.of(2022,Month.JULY,24),
-                        "The Wilds",
-                        1_000.00,
-                        25_000.00)
-        );
+    return tournamentService.getTournaments();
     }
 
 
