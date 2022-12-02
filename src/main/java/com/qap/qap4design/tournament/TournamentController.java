@@ -33,5 +33,17 @@ public class TournamentController {
     }
 
 
+    @PatchMapping(path = "{tournamentId")
+    public void updateTournament(@PathVariable("tournamentId") Long tournamentId,
+                                 @RequestParam(required = false) String name,
+                                 @RequestParam(required = false) LocalDate startDate,
+                                 @RequestParam(required = false) LocalDate endDate,
+                                 @RequestParam(required = false) String location,
+                                 @RequestParam(required = false) Double entryFee,
+                                 @RequestParam(required = false) Double cashPrize){
+                tournamentService.updateTournament(tournamentId, name, startDate, endDate, location, entryFee , cashPrize);
+    }
+
+
 
 }
