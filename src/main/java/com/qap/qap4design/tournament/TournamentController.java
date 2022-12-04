@@ -33,7 +33,7 @@ public class TournamentController {
     }
 
 
-    @PatchMapping(path = "{tournamentId")
+    @PatchMapping(path = "{tournamentId}")
     public void updateTournament(@PathVariable("tournamentId") Long tournamentId,
                                  @RequestParam(required = false) String name,
                                  @RequestParam(required = false) LocalDate startDate,

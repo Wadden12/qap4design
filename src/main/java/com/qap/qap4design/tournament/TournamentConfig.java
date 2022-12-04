@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.time.Month;
-import java.util.List;
+
 
 @Configuration
 public class TournamentConfig {
